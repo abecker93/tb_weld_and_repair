@@ -1,5 +1,4 @@
 // src/app/contact/page.tsx
-import Link from "next/link";
 
 export default function ContactPage() {
   return (
