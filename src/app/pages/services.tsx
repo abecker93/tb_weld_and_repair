@@ -2,29 +2,43 @@
 import Layout from "@/components/Layout";
 import { SERVICES_QUERY } from "@/lib/queries";
 import { request } from "graphql-request";
+import { Service } from "@/types";
 
 export default async function ServicesPage() {
-  const { services } = await request(
+  const { services }: { services: Service[] } = await request(
     "https://us-west-2.cdn.hygraph.com/content/cm8xmxs7b04u608w27p42y13t/master",
     SERVICES_QUERY
   );
 
   return (
     <Layout>
-      <section className="space-y-8 mt-8">
+      <section className="space-y-8 mt-8 max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold">Our Services</h1>
-        {services.map((service: any) => (
-          <div key={service.slug} className="border-b pb-6 mb-6">
-            <h2 className="text-2xl font-semibold">{service.title}</h2>
+        {services.map((service) => (
+          <div key={service.name} className="border-b pb-8">
+            <h2 className="text-2xl font-semibold">{service.name}</h2>
+
+            {service.image?.url && (
+              <img
+                src={service.image.url}
+                alt={service.image.fileName}
+                className="w-full max-w-md my-4 rounded shadow"
+              />
+            )}
+
+            <p className="text-gray-700 mb-2">{service.description}</p>
+
             <div
               className="prose"
-              dangerouslySetInnerHTML={{ __html: service.description.html }}
+              dangerouslySetInnerHTML={{
+                __html: service.descriptionFull.html,
+              }}
             />
-            {service.priceInfo && (
-              <div
-                className="prose mt-2 text-sm text-gray-700"
-                dangerouslySetInnerHTML={{ __html: service.priceInfo.html }}
-              />
+
+            {typeof service.price === "number" && (
+              <p className="mt-2 font-medium text-lg text-black">
+                Starting at ${service.price.toFixed(2)}
+              </p>
             )}
           </div>
         ))}
