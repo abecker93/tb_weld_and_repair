@@ -1,5 +1,4 @@
 // pages/services.tsx
-import Layout from "../components/layout";
 import { SERVICES_QUERY } from "../lib/queries";
 import { request } from "graphql-request";
 import { Service } from "../types";
