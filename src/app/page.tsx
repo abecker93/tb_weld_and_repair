@@ -1,7 +1,8 @@
+// src/app/page.tsx
 import Link from "next/link";
 import Layout from "../components/layout";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <Layout>
       <section className="text-center space-y-6 mt-12">
