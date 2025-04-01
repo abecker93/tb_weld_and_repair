@@ -3,6 +3,7 @@ import { request } from "graphql-request";
 import { SERVICES_QUERY } from "../lib/queries";
 import { Service } from "../types";
 
+export const dynamic = "force-dynamic";
 export default async function ServicesPage() {
   const { services }: { services: Service[] } = await request(
     "https://us-west-2.cdn.hygraph.com/content/cm8xmxs7b04u608w27p42y13t/master",
