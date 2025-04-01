@@ -1,6 +1,5 @@
 export default function ContactPage() {
   return (
-    <Layout>
       <section className="space-y-8 mt-8 max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold">Get in Touch</h1>
 
@@ -43,6 +42,5 @@ export default function ContactPage() {
           ></iframe>
         </div>
       </section>
-    </Layout>
   );
 }

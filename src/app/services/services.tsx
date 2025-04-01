@@ -10,7 +10,6 @@ export default async function ServicesPage() {
   );
 
   return (
-    <Layout>
       <section className="space-y-8 mt-8 max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold">Our Services</h1>
         {services.map((service) => (
@@ -42,7 +41,6 @@ export default async function ServicesPage() {
           </div>
         ))}
       </section>
-    </Layout>
   );
 }
 

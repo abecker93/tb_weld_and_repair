@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <Layout>
       <section className="text-center space-y-6 mt-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           Welding & Repair Services That Come to You
@@ -21,7 +20,6 @@ export default function HomePage() {
       <section className="mt-24 text-center text-sm text-gray-500">
         Not sure what you need? <Link href="/contact" className="underline hover:text-black">Get in touch</Link>.
       </section>
-    </Layout>
   );
 }
 
