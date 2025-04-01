@@ -36,6 +36,6 @@ export const services: Service[] = [
     slug: "pickup",
     shortDescription: "We transport equipment up to 3,000 lbs for repair.",
     longDescription: "For customers without a trailer or large equipment transport, we’ll handle pickup and return within our service radius.",
-    price: 60,
+    price: 150,
   },
 ];
