@@ -1,8 +1,8 @@
 // pages/services.tsx
-import Layout from "@/components/Layout";
-import { SERVICES_QUERY } from "@/lib/queries";
+import Layout from "../components/Layout";
+import { SERVICES_QUERY } from "../lib/queries";
 import { request } from "graphql-request";
-import { Service } from "@/types";
+import { Service } from "../types";
 
 export default async function ServicesPage() {
   const { services }: { services: Service[] } = await request(
