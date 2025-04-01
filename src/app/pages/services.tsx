@@ -5,7 +5,7 @@ import { request } from "graphql-request";
 
 export default async function ServicesPage() {
   const { services } = await request(
-    ""https://us-west-2.cdn.hygraph.com/content/cm8xmxs7b04u608w27p42y13t/master,
+    "https://us-west-2.cdn.hygraph.com/content/cm8xmxs7b04u608w27p42y13t/master",
     SERVICES_QUERY
   );
 
